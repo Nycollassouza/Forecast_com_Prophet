@@ -30,6 +30,7 @@ Este projeto permite:
 Forecast_com_Prophet/
 
 src/
+
 │
 ├── main.py               
 ├── forecaster.py         
@@ -46,6 +47,7 @@ config/
 
 data/
 └── exemplo_base_forecast.xlsx
+
 
 requirements.txt
 README.md
