@@ -4,6 +4,8 @@ Projeto de previsão de vendas utilizando Facebook Prophet, com suporte para mú
 
 O objetivo do projeto é criar um pipeline de previsão escalável, capaz de processar dados históricos de vendas e gerar projeções futuras de forma automatizada.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 🚀 Tecnologias utilizadas
 
 Python
@@ -14,6 +16,8 @@ Scikit-learn
 Matplotlib
 YAML
 Tkinter (interface)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 📊 O que o projeto faz
 
@@ -26,12 +30,13 @@ Este projeto permite:
 ✔️ Exportar resultados para arquivos
 ✔️ Gerar gráficos de previsão
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 📂 Estrutura do projeto
 Forecast_com_Prophet/
 
 src/
 
-│
 ├── main.py               
 ├── forecaster.py         
 ├── model_trainer.py       
@@ -40,18 +45,24 @@ src/
 └── app_tk.py              
 
 config/
-│
+
+
 ├── config.yaml
+
 ├── pesos_distribuicao.yaml
+
 └── sazonalidade_agro.yaml
 
 data/
-└── exemplo_base_forecast.xlsx
 
+└── exemplo_base_forecast.xlsx
 
 requirements.txt
 README.md
 .gitignore
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ⚙️ Instalação
 
 Clone o repositório:
@@ -75,6 +86,9 @@ venv\Scripts\activate
 Instale as dependências:
 
 pip install -r requirements.txt
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ▶️ Como executar
 
 Execute o arquivo principal:
@@ -84,6 +98,9 @@ python src/main.py
 Ou utilize a interface gráfica:
 
 python src/app_tk.py
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 📉 Exemplo de Forecast
 
 O modelo utiliza Facebook Prophet para gerar previsões baseadas em:
@@ -102,6 +119,8 @@ limite inferior (yhat_lower)
 
 limite superior (yhat_upper)
 
+------------------------------------------
+
 📊 Possíveis melhorias futuras
 
 Dashboard interativo com Plotly
@@ -113,6 +132,8 @@ Pipeline automatizado
 Integração com banco de dados
 
 Deploy em cloud
+
+-------------------------------------------
 
 👨‍💻 Autor
 
