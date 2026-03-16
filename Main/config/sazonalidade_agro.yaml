@@ -1,0 +1,59 @@
+# =============================================================================
+# ARQUIVO: config/sazonalidade_agro.yaml
+# =============================================================================
+
+# Pesos sazonais customizados para mercado Agro
+pesos_mensais:
+  1:
+    peso: 0.60
+    descricao: "Entressafra - Demanda baixa"
+    fase: "entressafra"
+  2:
+    peso: 0.40
+    descricao: "Entressafra - Demanda baixa"
+    fase: "entressafra"
+  3:
+    peso: 0.55
+    descricao: "Entressafra - Início preparação"
+    fase: "entressafra"
+  4:
+    peso: 0.70
+    descricao: "Preparação - Demanda crescente"
+    fase: "preparacao"
+  5:
+    peso: 0.95
+    descricao: "Preparação - Pré-safra"
+    fase: "preparacao"
+  6:
+    peso: 1.10
+    descricao: "Início Safra - Demanda alta"
+    fase: "safra"
+  7:
+    peso: 1.15
+    descricao: "Safra Alta - Pico de aplicações"
+    fase: "safra"
+  8:
+    peso: 1.20
+    descricao: "Safra Alta - Pico de aplicações"
+    fase: "safra"
+  9:
+    peso: 1.20
+    descricao: "Pico Safra - Máxima demanda"
+    fase: "safra"
+  10:
+    peso: 1.15
+    descricao: "Safra Alta - Manutenção demanda"
+    fase: "safra"
+  11:
+    peso: 0.80
+    descricao: "Safra - Demanda ainda elevada"
+    fase: "safra"
+  12:
+    peso: 0.75
+    descricao: "Fim Safra - Demanda decrescente"
+    fase: "fim_safra"
+
+safra:
+  mes_inicio: 6
+  mes_pico: 9
+  mes_fim: 12

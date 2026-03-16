@@ -1,0 +1,72 @@
+# =================================================================
+# ARQUIVO DE CONFIGURAÇÃO - PREVISÃO AGRO B2C (MODO ADITIVO)
+# =================================================================
+
+# Configurações de dados
+data:
+  input_file: 
+  diretoria_filtro: 
+  encoding: 'utf-8-sig'
+  history_start_date: '2024-01-01'
+  history_end_date: '2025-12-01'
+
+# Configurações de previsão
+forecast:
+  mes_alvo: 6
+  ano_alvo: 2026
+  incluir_intervalos_confianca: true
+  nivel_confianca: 0.80
+
+# Configurações do Prophet
+prophet:
+  # 'linear' é mais robusto que 'logistic' se não tivermos certeza do teto (cap)
+  growth: 'linear'
+  
+  yearly_seasonality: false
+  weekly_seasonality: false
+  daily_seasonality: false
+  
+  # =================================================================
+  # === MUDANÇA ESTRATÉGICA: ADITIVO ================================
+  # Mudamos para 'additive' para evitar que a sazonalidade exploda
+  # multiplicativamente nos meses de pico (Nov/Dez).
+  # A sazonalidade será somada à tendência, não multiplicada.
+  # =================================================================
+  seasonality_mode: 'additive'
+  
+  # Parâmetros de suavização
+  changepoint_prior_scale: 0.08  # Flexibilidade da tendência
+  seasonality_prior_scale: 10.0  # Flexibilidade da sazonalidade (reduzido para controlar picos)
+  
+  interval_width: 0.80
+  mcmc_samples: 0
+  uncertainty_samples: 1000
+
+# Configurações de sazonalidade Agro (Features extras)
+sazonalidade_agro:
+  usar_pesos_customizados: true
+  pesos_arquivo: 'config/sazonalidade_agro.yaml'
+  mes_inicio_safra: 6
+  mes_fim_safra: 12
+  fourier_order_anual: 8      # Reduzido de 10 para 8 para evitar overfitting em curvas complexas
+  fourier_order_semestral: 4  # Reduzido de 6 para 4
+
+# Níveis de agregação para modelagem
+niveis_modelagem:
+  - produto
+  # - linha  <-- Descomente se quiser modelar agregados
+  # - grupo
+
+# Métricas a prever
+metricas:
+  - nome: 'RECEITA LÍQ.'
+    tipo: 'receita'
+  - nome: 'QTDE P/1.000'
+    tipo: 'volume'
+
+# Output
+output:
+  formatos: ['json', 'csv', 'excel']
+  incluir_graficos: true
+  pasta_output: 'venv/data/output/previsoes'
+  model_dir: 'venv/data/output/modelos'
