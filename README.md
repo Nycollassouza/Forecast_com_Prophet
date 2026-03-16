@@ -31,12 +31,12 @@ Forecast_com_Prophet/
 
 src/
 │
-├── main.py                # Arquivo principal de execução
-├── forecaster.py          # Lógica de previsão
-├── model_trainer.py       # Treinamento dos modelos
-├── output_generator.py    # Geração de outputs
-├── sazonalidade_agro.py   # Tratamento de sazonalidade agrícola
-└── app_tk.py              # Interface gráfica
+├── main.py               
+├── forecaster.py         
+├── model_trainer.py       
+├── output_generator.py    
+├── sazonalidade_agro.py  
+└── app_tk.py              
 
 config/
 │
